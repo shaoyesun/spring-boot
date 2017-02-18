@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="text/html;charset=UTF-8"/>
+    <!--X-UA-Compatible 是针对 IE8 版本的一个特殊文件头标记，用于为 IE8 指定不同的页面渲染模式-->
+    <meta http-equiv="X-UA-COMPATIBLE" CONTENT="IE=edge"/>
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/}">back</a><br/><br/>
+<span th:text="${name}"></span> |
+<span th:text="${age}"></span>
+</body>
+</html>
