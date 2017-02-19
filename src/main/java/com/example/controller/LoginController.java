@@ -14,13 +14,12 @@ public class LoginController {
     private static final Logger log = LoggerFactory.getLogger(LoginController.class);
 
     @RequestMapping(value = "/login")
-    public String login(String username, String password){
+    public String login() {
         return "login";
     }
 
     @RequestMapping("/")
-    String login() {
-        log.info("login");
+    String login_index() {
         return "login";
     }
 

@@ -17,7 +17,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("123").password("123").roles("USER");
+                .withUser("123").password("123").roles("admin");
     }
 
     @Override
@@ -29,7 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/", "/websocket/**", "/leaf/**").permitAll()
-                .antMatchers("/user/**").authenticated()
+                .antMatchers("/user/**").hasRole("admin")
                 .and()
                 .formLogin().loginPage("/login").permitAll()
                 .and()
